@@ -26,7 +26,7 @@ namespace GildedRose.Console
         {
             if (currentItem.SellIn < 0)
             {
-                currentItem.Quality = currentItem.Quality - currentItem.Quality;
+                currentItem.Quality = 0;
             }
         }
 
@@ -34,7 +34,7 @@ namespace GildedRose.Console
         {
             if (currentItem.Quality > 0)
             {
-                currentItem.Quality = currentItem.Quality - 1;
+                currentItem.Quality--;
             }
         }
 
@@ -42,8 +42,13 @@ namespace GildedRose.Console
         {
             if (currentItem.Quality < 50)
             {
-                currentItem.Quality = currentItem.Quality + 1;
+                currentItem.Quality++;
             }
+        }
+
+        public static void DecreaseSellIn(Item currentItem)
+        {
+            currentItem.SellIn--;
         }
     }
 }

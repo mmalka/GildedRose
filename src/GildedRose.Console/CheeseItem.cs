@@ -7,7 +7,8 @@
             if (Name == "Aged Brie")
             {
                 InventoryManager.IncreaseQuality(this);
-                SellIn = SellIn - 1;
+
+                InventoryManager.DecreaseSellIn(this);
 
                 if (SellIn < 0)
                 {

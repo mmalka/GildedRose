@@ -6,7 +6,7 @@
         {
             InventoryManager.DecreaseQuality(this);
 
-            SellIn = SellIn - 1;
+            InventoryManager.DecreaseSellIn(this);
 
             if (SellIn < 0)
             {
