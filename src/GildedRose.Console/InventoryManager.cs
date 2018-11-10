@@ -29,6 +29,7 @@ namespace GildedRose.Console
                 {
                     currentItem.Quality = currentItem.Quality + 1;
                 }
+
                 if (currentItem.Quality < 50)
                 {
                     if (currentItem.SellIn < 11)
@@ -91,12 +92,12 @@ namespace GildedRose.Console
                 }
                 else
                 {
-                    if (currentItem.SellIn < 0)
+                    if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
                     {
-                        if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
-                        {
-                        }
-                        else if (currentItem.Quality > 0)
+                    }
+                    else if (currentItem.SellIn < 0)
+                    {
+                        if (currentItem.Quality > 0)
                         {
                             currentItem.Quality = currentItem.Quality - 1;
                         }
