@@ -16,56 +16,9 @@ namespace GildedRose.Console
 
         private static void UpdateItem(Item currentItem)
         {
-            if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
+            if (currentItem is ICanSelfUpdate updateableItem)
             {
-                return;
-            }
-
-            if (currentItem.Name == "Aged Brie")
-            {
-                IncreaseQuality(currentItem);
-
-                currentItem.SellIn = currentItem.SellIn - 1;
-
-                if (currentItem.SellIn < 0)
-                {
-                    IncreaseQuality(currentItem);
-                }
-
-                return;
-            }
-
-            if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
-            {
-                IncreaseQuality(currentItem);
-
-                if (currentItem.Quality < 50)
-                {
-                    if (currentItem.SellIn < 11)
-                    {
-                        IncreaseQuality(currentItem);
-                    }
-
-                    if (currentItem.SellIn < 6)
-                    {
-                        IncreaseQuality(currentItem);
-                    }
-                }
-
-                currentItem.SellIn = currentItem.SellIn - 1;
-
-                ResetQuality(currentItem);
-
-                return;
-            }
-
-            DecreaseQuality(currentItem);
-
-            currentItem.SellIn = currentItem.SellIn - 1;
-
-            if (currentItem.SellIn < 0)
-            {
-                DecreaseQuality(currentItem);
+                updateableItem.Update();
             }
         }
 
