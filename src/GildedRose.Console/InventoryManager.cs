@@ -81,6 +81,9 @@ namespace GildedRose.Console
                     }
                 }
             }
+            else if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
+            {
+            }
             else
             {
                 if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
@@ -89,9 +92,6 @@ namespace GildedRose.Console
                     {
                         currentItem.Quality = currentItem.Quality - currentItem.Quality;
                     }
-                }
-                else if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
-                {
                 }
                 else
                 {
