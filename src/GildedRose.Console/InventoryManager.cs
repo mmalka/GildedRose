@@ -22,7 +22,7 @@ namespace GildedRose.Console
             }
         }
 
-        public static void ResetQuality(Item currentItem)
+        public static void ResetQualityIfExpired(Item currentItem)
         {
             if (currentItem.SellIn < 0)
             {
@@ -30,7 +30,7 @@ namespace GildedRose.Console
             }
         }
 
-        public static void DecreaseQuality(Item currentItem)
+        public static void DecreaseQualityIfGreaterThanZero(Item currentItem)
         {
             if (currentItem.Quality > 0)
             {
@@ -38,7 +38,7 @@ namespace GildedRose.Console
             }
         }
 
-        public static void IncreaseQuality(Item currentItem)
+        public static void IncreaseQualityIfLowerThanFifty(Item currentItem)
         {
             if (currentItem.Quality < 50)
             {

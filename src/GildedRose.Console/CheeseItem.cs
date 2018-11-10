@@ -4,13 +4,13 @@
     {
         public void Update()
         {
-            InventoryManager.IncreaseQuality(this);
+            InventoryManager.IncreaseQualityIfLowerThanFifty(this);
 
             InventoryManager.DecreaseSellIn(this);
 
             if (SellIn < 0)
             {
-                InventoryManager.IncreaseQuality(this);
+                InventoryManager.IncreaseQualityIfLowerThanFifty(this);
             }
         }
     }

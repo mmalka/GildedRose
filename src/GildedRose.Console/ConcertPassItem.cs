@@ -4,21 +4,21 @@
     {
         public void Update()
         {
-            InventoryManager.IncreaseQuality(this);
+            InventoryManager.IncreaseQualityIfLowerThanFifty(this);
 
             if (SellIn < 11)
             {
-                InventoryManager.IncreaseQuality(this);
+                InventoryManager.IncreaseQualityIfLowerThanFifty(this);
             }
 
             if (SellIn < 6)
             {
-                InventoryManager.IncreaseQuality(this);
+                InventoryManager.IncreaseQualityIfLowerThanFifty(this);
             }
 
             InventoryManager.DecreaseSellIn(this);
 
-            InventoryManager.ResetQuality(this);
+            InventoryManager.ResetQualityIfExpired(this);
         }
     }
 }
