@@ -2,12 +2,18 @@
 
 namespace GildedRose.Console
 {
-    class Program
+    public class Program
     {
-        IList<Item> Items;
+        public static IList<Item> Inventory
+        {
+            get { return Items; }
+            set { Items = value; }
+        }
+        static IList<Item> Items;
+
         static void Main(string[] args)
         {
-            System.Console.WriteLine("OMGHAI!");
+            /*System.Console.WriteLine("OMGHAI!");
 
             var app = new Program()
                           {
@@ -30,11 +36,11 @@ namespace GildedRose.Console
 
             app.UpdateQuality();
 
-            System.Console.ReadKey();
+            System.Console.ReadKey();*/
 
         }
 
-        public void UpdateQuality()
+        public static void UpdateQuality()
         {
             for (var i = 0; i < Items.Count; i++)
             {
