@@ -46,12 +46,59 @@ namespace GildedRose.Tests
 
             for (int currentDay = 0; currentDay < 100; currentDay++)
             {
-                for (int itemIndex = 0, itemCount = LegacyInventoryManager.Inventory.Count; itemIndex < itemCount; itemIndex++)
+                for (int itemIndex = 0, itemCount = LegacyInventoryManager.Inventory.Count;
+                    itemIndex < itemCount;
+                    itemIndex++)
                 {
                     LegacyInventoryManager.UpdateQuality();
                     InventoryManager.UpdateQuality();
 
-                    Assert.Equal(LegacyInventoryManager.Inventory[itemIndex].Quality, InventoryManager.Inventory[itemIndex].Quality);
+                    Assert.Equal(LegacyInventoryManager.Inventory[itemIndex].Quality,
+                        InventoryManager.Inventory[itemIndex].Quality);
+                }
+            }
+        }
+
+        [Fact]
+        public void ShouldAssertThatAllItemsSellInRemainsEqualAnHundredDayInARowWhileComparingAgainstLegacyVersionOutput()
+        {
+            LegacyInventoryManager.Inventory = GenerateStartingInnInventoryItems();
+
+            InventoryManager.Inventory = GenerateStartingInnInventoryItems();
+
+            for (int currentDay = 0; currentDay < 100; currentDay++)
+            {
+                for (int itemIndex = 0, itemCount = LegacyInventoryManager.Inventory.Count;
+                    itemIndex < itemCount;
+                    itemIndex++)
+                {
+                    LegacyInventoryManager.UpdateQuality();
+                    InventoryManager.UpdateQuality();
+
+                    Assert.Equal(LegacyInventoryManager.Inventory[itemIndex].SellIn,
+                        InventoryManager.Inventory[itemIndex].SellIn);
+                }
+            }
+        }
+
+        [Fact]
+        public void ShouldAssertThatAllItemsNameRemainsEqualAnHundredDayInARowWhileComparingAgainstLegacyVersionOutput()
+        {
+            LegacyInventoryManager.Inventory = GenerateStartingInnInventoryItems();
+
+            InventoryManager.Inventory = GenerateStartingInnInventoryItems();
+
+            for (int currentDay = 0; currentDay < 100; currentDay++)
+            {
+                for (int itemIndex = 0, itemCount = LegacyInventoryManager.Inventory.Count;
+                    itemIndex < itemCount;
+                    itemIndex++)
+                {
+                    LegacyInventoryManager.UpdateQuality();
+                    InventoryManager.UpdateQuality();
+
+                    Assert.Equal(LegacyInventoryManager.Inventory[itemIndex].Name,
+                        InventoryManager.Inventory[itemIndex].Name);
                 }
             }
         }
