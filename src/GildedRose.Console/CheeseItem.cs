@@ -4,16 +4,13 @@
     {
         public void Update()
         {
-            if (Name == "Aged Brie")
+            InventoryManager.IncreaseQuality(this);
+
+            InventoryManager.DecreaseSellIn(this);
+
+            if (SellIn < 0)
             {
                 InventoryManager.IncreaseQuality(this);
-
-                InventoryManager.DecreaseSellIn(this);
-
-                if (SellIn < 0)
-                {
-                    InventoryManager.IncreaseQuality(this);
-                }
             }
         }
     }
