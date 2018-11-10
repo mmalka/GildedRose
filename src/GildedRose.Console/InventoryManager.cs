@@ -23,18 +23,13 @@ namespace GildedRose.Console
 
             if (currentItem.Name == "Aged Brie")
             {
-                if (currentItem.Quality < 50)
-                {
-                    currentItem.Quality = currentItem.Quality + 1;
-                }
+                IncreaseQuality(currentItem);
+
                 currentItem.SellIn = currentItem.SellIn - 1;
 
                 if (currentItem.SellIn < 0)
                 {
-                    if (currentItem.Quality < 50)
-                    {
-                        currentItem.Quality = currentItem.Quality + 1;
-                    }
+                    IncreaseQuality(currentItem);
                 }
 
                 return;
@@ -42,27 +37,18 @@ namespace GildedRose.Console
 
             if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
-                if (currentItem.Quality < 50)
-                {
-                    currentItem.Quality = currentItem.Quality + 1;
-                }
+                IncreaseQuality(currentItem);
 
                 if (currentItem.Quality < 50)
                 {
                     if (currentItem.SellIn < 11)
                     {
-                        if (currentItem.Quality < 50)
-                        {
-                            currentItem.Quality = currentItem.Quality + 1;
-                        }
+                        IncreaseQuality(currentItem);
                     }
 
                     if (currentItem.SellIn < 6)
                     {
-                        if (currentItem.Quality < 50)
-                        {
-                            currentItem.Quality = currentItem.Quality + 1;
-                        }
+                        IncreaseQuality(currentItem);
                     }
                 }
                 currentItem.SellIn = currentItem.SellIn - 1;
@@ -87,6 +73,14 @@ namespace GildedRose.Console
                 {
                     currentItem.Quality = currentItem.Quality - 1;
                 }
+            }
+        }
+
+        private static void IncreaseQuality(Item currentItem)
+        {
+            if (currentItem.Quality < 50)
+            {
+                currentItem.Quality = currentItem.Quality + 1;
             }
         }
     }
