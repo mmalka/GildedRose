@@ -65,6 +65,13 @@ namespace GildedRose.Console
                     }
                 }
                 currentItem.SellIn = currentItem.SellIn - 1;
+
+                if (currentItem.SellIn < 0)
+                {
+                    currentItem.Quality = currentItem.Quality - currentItem.Quality;
+                }
+
+                return;
             }
             else
             {
@@ -77,10 +84,6 @@ namespace GildedRose.Console
 
             if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
-                if (currentItem.SellIn < 0)
-                {
-                    currentItem.Quality = currentItem.Quality - currentItem.Quality;
-                }
             }
             else
             {
