@@ -27,6 +27,7 @@ namespace GildedRose.Console
                 {
                     currentItem.Quality = currentItem.Quality + 1;
                 }
+                currentItem.SellIn = currentItem.SellIn - 1;
             }
             else if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
@@ -53,6 +54,7 @@ namespace GildedRose.Console
                         }
                     }
                 }
+                currentItem.SellIn = currentItem.SellIn - 1;
             }
             else
             {
@@ -60,9 +62,8 @@ namespace GildedRose.Console
                 {
                     currentItem.Quality = currentItem.Quality - 1;
                 }
+                currentItem.SellIn = currentItem.SellIn - 1;
             }
-
-            currentItem.SellIn = currentItem.SellIn - 1;
 
             if (currentItem.Name == "Aged Brie")
             {
