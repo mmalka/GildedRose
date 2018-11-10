@@ -51,28 +51,37 @@ namespace GildedRose.Console
                         IncreaseQuality(currentItem);
                     }
                 }
+
                 currentItem.SellIn = currentItem.SellIn - 1;
 
-                if (currentItem.SellIn < 0)
-                {
-                    currentItem.Quality = currentItem.Quality - currentItem.Quality;
-                }
+                ResetQuality(currentItem);
 
                 return;
             }
 
-            if (currentItem.Quality > 0)
-            {
-                currentItem.Quality = currentItem.Quality - 1;
-            }
+            DecreaseQuality(currentItem);
+
             currentItem.SellIn = currentItem.SellIn - 1;
 
             if (currentItem.SellIn < 0)
             {
-                if (currentItem.Quality > 0)
-                {
-                    currentItem.Quality = currentItem.Quality - 1;
-                }
+                DecreaseQuality(currentItem);
+            }
+        }
+
+        private static void ResetQuality(Item currentItem)
+        {
+            if (currentItem.SellIn < 0)
+            {
+                currentItem.Quality = currentItem.Quality - currentItem.Quality;
+            }
+        }
+
+        private static void DecreaseQuality(Item currentItem)
+        {
+            if (currentItem.Quality > 0)
+            {
+                currentItem.Quality = currentItem.Quality - 1;
             }
         }
 
