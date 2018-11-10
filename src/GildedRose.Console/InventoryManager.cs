@@ -93,13 +93,11 @@ namespace GildedRose.Console
                 {
                     if (currentItem.SellIn < 0)
                     {
-                        if (currentItem.Quality > 0)
+                        if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
                         {
-                            if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
-                            {
-                                return;
-                            }
-
+                        }
+                        else if (currentItem.Quality > 0)
+                        {
                             currentItem.Quality = currentItem.Quality - 1;
                         }
                     }
