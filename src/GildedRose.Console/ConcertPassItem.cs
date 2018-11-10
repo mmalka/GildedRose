@@ -8,19 +8,17 @@
             {
                 InventoryManager.IncreaseQuality(this);
 
-                if (Quality < 50)
+                if (SellIn < 11)
                 {
-                    if (SellIn < 11)
-                    {
-                        InventoryManager.IncreaseQuality(this);
-                    }
-
-                    if (SellIn < 6)
-                    {
-                        InventoryManager.IncreaseQuality(this);
-                    }
+                    InventoryManager.IncreaseQuality(this);
                 }
-                SellIn = SellIn - 1;
+
+                if (SellIn < 6)
+                {
+                    InventoryManager.IncreaseQuality(this);
+                }
+
+                InventoryManager.DecreaseSellIn(this);
 
                 InventoryManager.ResetQuality(this);
             }
