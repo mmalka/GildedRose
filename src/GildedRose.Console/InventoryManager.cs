@@ -49,17 +49,14 @@ namespace GildedRose.Console
                     }
                 }
             }
+            else if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
+            {
+            }
             else
             {
-                if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
+                if (currentItem.Quality > 0)
                 {
-                }
-                else
-                {
-                    if (currentItem.Quality > 0)
-                    {
-                        currentItem.Quality = currentItem.Quality - 1;
-                    }
+                    currentItem.Quality = currentItem.Quality - 1;
                 }
             }
 
