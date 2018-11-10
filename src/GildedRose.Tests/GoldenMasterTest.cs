@@ -40,18 +40,18 @@ namespace GildedRose.Tests
         [Fact]
         public void ShouldAssertThatAllItemsQualityRemainsEqualAnHundredDayInARowWhileComparingAgainstLegacyVersionOutput()
         {
-            Program.Inventory = GenerateStartingInnInventoryItems();
+            LegacyInventoryManager.Inventory = GenerateStartingInnInventoryItems();
 
             InventoryManager.Inventory = GenerateStartingInnInventoryItems();
 
             for (int currentDay = 0; currentDay < 100; currentDay++)
             {
-                for (int itemIndex = 0, itemCount = Program.Inventory.Count; itemIndex < itemCount; itemIndex++)
+                for (int itemIndex = 0, itemCount = LegacyInventoryManager.Inventory.Count; itemIndex < itemCount; itemIndex++)
                 {
-                    Program.UpdateQuality();
+                    LegacyInventoryManager.UpdateQuality();
                     InventoryManager.UpdateQuality();
 
-                    Assert.Equal(Program.Inventory[itemIndex].Quality, InventoryManager.Inventory[itemIndex].Quality);
+                    Assert.Equal(LegacyInventoryManager.Inventory[itemIndex].Quality, InventoryManager.Inventory[itemIndex].Quality);
                 }
             }
         }
