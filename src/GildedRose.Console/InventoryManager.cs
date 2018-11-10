@@ -21,8 +21,11 @@ namespace GildedRose.Console
                 if (currentItem.Quality < 50)
                 {
                     currentItem.Quality = currentItem.Quality + 1;
+                }
 
-                    if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
+                if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
+                {
+                    if (currentItem.Quality < 50)
                     {
                         if (currentItem.SellIn < 11)
                         {
@@ -79,13 +82,16 @@ namespace GildedRose.Console
             }
             else
             {
-                if (currentItem.SellIn < 0)
+                if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (currentItem.Name == "Backstage passes to a TAFKAL80ETC concert")
+                    if (currentItem.SellIn < 0)
                     {
                         currentItem.Quality = currentItem.Quality - currentItem.Quality;
                     }
-                    else
+                }
+                else
+                {
+                    if (currentItem.SellIn < 0)
                     {
                         if (currentItem.Quality > 0)
                         {
