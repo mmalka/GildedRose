@@ -16,6 +16,11 @@ namespace GildedRose.Console
 
         private static void UpdateItem(Item currentItem)
         {
+            if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
+            {
+                return;
+            }
+
             if (currentItem.Name == "Aged Brie")
             {
                 if (currentItem.Quality < 50)
@@ -49,9 +54,6 @@ namespace GildedRose.Console
                     }
                 }
             }
-            else if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
-            {
-            }
             else
             {
                 if (currentItem.Quality > 0)
@@ -60,13 +62,7 @@ namespace GildedRose.Console
                 }
             }
 
-            if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
-            {
-            }
-            else
-            {
-                currentItem.SellIn = currentItem.SellIn - 1;
-            }
+            currentItem.SellIn = currentItem.SellIn - 1;
 
             if (currentItem.Name == "Aged Brie")
             {
@@ -77,9 +73,6 @@ namespace GildedRose.Console
                         currentItem.Quality = currentItem.Quality + 1;
                     }
                 }
-            }
-            else if (currentItem.Name == "Sulfuras, Hand of Ragnaros")
-            {
             }
             else
             {
