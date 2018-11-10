@@ -41,9 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheeseItem.cs" />
+    <Compile Include="CommonItem.cs" />
+    <Compile Include="ConcertPassItem.cs" />
+    <Compile Include="ICanSelfUpdate.cs" />
     <Compile Include="InventoryManager.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="LegacyInventoryManager.cs" />
+    <Compile Include="LegendaryItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
